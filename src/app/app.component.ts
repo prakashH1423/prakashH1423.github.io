@@ -15,7 +15,7 @@ export class AppComponent{
   canadianUniversities: any;
   indianUniversitiesSliced: any[] | undefined;
   filteredUniversities: any;
-  selectedCountry: any;
+  selectedCountry: any = "India";
   countries = ["India", "China", "France", "Canada"];
   pageCounter = 1;
   constructor( private universityService: UniversityService){
@@ -24,14 +24,19 @@ export class AppComponent{
   ngOnInit(){
     this.universityService.getUniversities().subscribe((response)=>{
       this.universitiesTotal = response;
-      this.countrySelect("India");
+      this.filteredUniversities =  this.universitiesTotal.filter((item:any)=>{
+        if(item.country === this.selectedCountry){
+          return item;
+        }
+      }).slice(0,10);
     });
   }
 
   countrySelect(country: any){
-    this.selectedCountry = country;
+    console.log(country.target.value);
+    this.selectedCountry = country.target.value;
     this.filteredUniversities =  this.universitiesTotal.filter((item:any)=>{
-      if(item.country === country){
+      if(item.country === this.selectedCountry){
         return item;
       }
     }).slice(0,10);
