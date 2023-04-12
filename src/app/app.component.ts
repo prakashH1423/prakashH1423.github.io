@@ -15,9 +15,9 @@ export class AppComponent{
   canadianUniversities: any;
   indianUniversitiesSliced: any[] | undefined;
   pageCounter = 1;
-  countries = ["India", "China", "France", "Canada"];
   filteredUniversities: any;
   selectedCountry: any;
+  countries = ["India", "China", "France", "Canada"];
   constructor( private universityService: UniversityService){
   }
 
@@ -46,7 +46,6 @@ export class AppComponent{
         }
       }
     }).slice(0,10);
-
   }
 
 }
