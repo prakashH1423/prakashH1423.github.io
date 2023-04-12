@@ -14,10 +14,10 @@ export class AppComponent{
   frenchUniversities: any;
   canadianUniversities: any;
   indianUniversitiesSliced: any[] | undefined;
-  pageCounter = 1;
   filteredUniversities: any;
   selectedCountry: any;
   countries = ["India", "China", "France", "Canada"];
+  pageCounter = 1;
   constructor( private universityService: UniversityService){
   }
 
