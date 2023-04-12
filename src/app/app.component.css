@@ -1,0 +1,22 @@
+.container{
+    padding: 30px;
+}
+
+.table{
+    border-spacing: 0px;
+}
+.table th, .table td{
+    padding: 5px;
+    text-align: left;
+    border: 1px solid #000;
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.mr-20{
+    margin-right: 20px;
+}
